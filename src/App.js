@@ -6,6 +6,8 @@ import List from "./List"
 import User from "./User"
 import Detail from './Detail'
 import Error from './404'
+import Test from './Test'
+
 
 class App extends Component {
     render() {
@@ -21,12 +23,16 @@ class App extends Component {
                     <li>
                         <Link to="/user">用户中心</Link>
                     </li>
+                    <li>
+                        <Link to="/test">Test</Link>
+                    </li>
                 </ul>
 
                 {/* 配置路由规则  exact表示精确匹配，防止匹配其他页面的时候匹配到/，也就是首页*/}
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/list' component={List}></Route>
                 <Route path='/user' component={User}></Route>
+                <Route path='/test' component={Test}></Route>
                 <Route path='/detail/:id' component={Detail}></Route>
                 {/* 没有写path表示匹配到所有的路径 */}
                 <Route component={Error}></Route>
